@@ -1,0 +1,12 @@
+/target
+**/*.rs.bk
+*.pdb
+
+# Saídas do app (gravações/snapshots) se alguém rodar na raiz
+/*.mp4
+/*.png
+snapshot_*.png
+rec_*.mp4
+
+# Config local eventual
+/config.json

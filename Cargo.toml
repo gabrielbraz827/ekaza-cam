@@ -1,0 +1,35 @@
+[package]
+name = "ekaza-cam"
+version = "0.3.0"
+edition = "2021"
+rust-version = "1.80"
+description = "App desktop para descobrir câmeras ONVIF/Tuya na rede, resolver o RTSP e assistir com player embutido"
+authors = ["gabrielbraz827"]
+license = "MIT"
+repository = "https://github.com/gabrielbraz827/ekaza-cam"
+readme = "README.md"
+keywords = ["onvif", "rtsp", "camera", "tuya", "egui"]
+categories = ["multimedia", "gui"]
+
+[[bin]]
+name = "ekaza-cam"
+path = "src/main.rs"
+
+[dependencies]
+eframe = "0.28"
+egui = "0.28"
+ureq = { version = "2.10", default-features = false }
+base64 = "0.22"
+sha1 = "0.10"
+md-5 = "0.10"
+rand = "0.8"
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+regex = "1.10"
+image = { version = "0.25", default-features = false, features = ["png"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+directories = "5"
+
+[profile.release]
+opt-level = 2
+strip = true
