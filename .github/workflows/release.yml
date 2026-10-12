@@ -20,7 +20,7 @@ jobs:
         include:
           - os: ubuntu-latest
             target: x86_64-unknown-linux-gnu
-            archive: ekaza-cam-linux-x86_64.tar.gz
+            archive: ekaza-cam-linux-x86_64.AppImage
           - os: windows-latest
             target: x86_64-pc-windows-msvc
             archive: ekaza-cam-windows-x86_64.zip
@@ -41,11 +41,11 @@ jobs:
       - name: Build release
         run: cargo build --release --target ${{ matrix.target }}
 
-      - name: Empacotar (Linux)
+      - name: Empacotar AppImage (Linux)
         if: runner.os == 'Linux'
         run: |
-          cd target/${{ matrix.target }}/release
-          tar -czvf ${{ github.workspace }}/${{ matrix.archive }} ekaza-cam
+          chmod +x scripts/build-appimage.sh
+          ./scripts/build-appimage.sh target/${{ matrix.target }}/release/ekaza-cam ${{ github.workspace }}/${{ matrix.archive }}
       - name: Empacotar (Windows)
         if: runner.os == 'Windows'
         run: |

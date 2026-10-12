@@ -28,8 +28,14 @@ Tuya), mas funciona com qualquer câmera que fale **ONVIF**.
 ## 📦 Instalação
 
 ### Binários prontos
-Baixe o executável da sua plataforma na página de [**Releases**](https://github.com/gabrielbraz827/ekaza-cam/releases)
-(gerados automaticamente para Linux e Windows).
+Baixe o executável da sua plataforma na página de [**Releases**](https://github.com/gabrielbraz827/ekaza-cam/releases):
+
+- **Linux (AppImage)**: Baixe `ekaza-cam-linux-x86_64.AppImage`, dê permissão de execução e rode:
+  ```bash
+  chmod +x ekaza-cam-linux-x86_64.AppImage
+  ./ekaza-cam-linux-x86_64.AppImage
+  ```
+- **Windows**: Baixe `ekaza-cam-windows-x86_64.zip`, descompacte e execute `ekaza-cam.exe`.
 
 ### Compilar do código-fonte
 Requer [Rust](https://rustup.rs/) (stable, ≥ 1.80):
@@ -39,6 +45,12 @@ git clone https://github.com/gabrielbraz827/ekaza-cam.git
 cd ekaza-cam
 cargo build --release
 ./target/release/ekaza-cam
+```
+
+Para gerar o **AppImage** localmente:
+
+```bash
+./scripts/build-appimage.sh
 ```
 
 No Linux, para compilar são necessárias algumas libs de sistema (X11/Wayland/GL):

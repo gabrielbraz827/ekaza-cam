@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Ekaza Cam
+Comment=App desktop para descobrir câmeras ONVIF/Tuya e assistir RTSP
+Exec=ekaza-cam %u
+Icon=ekaza-cam
+Terminal=false
+Type=Application
+Categories=AudioVideo;Video;
+StartupWMClass=ekaza-cam
+Keywords=onvif;rtsp;camera;tuya;video;

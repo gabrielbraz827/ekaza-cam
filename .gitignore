@@ -10,3 +10,6 @@ rec_*.mp4
 
 # Config local eventual
 /config.json
+
+# Artefatos AppImage
+*.AppImage

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.gabrielbraz827.ekaza-cam</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>ekaza-cam</name>
+  <summary>App desktop para câmeras ONVIF/Tuya e player RTSP</summary>
+  <description>
+    <p>
+      Aplicativo desktop para descobrir câmeras ONVIF/Tuya na rede local,
+      resolver URLs RTSP e assistir com player embutido.
+    </p>
+  </description>
+  <launchable type="desktop-id">ekaza-cam.desktop</launchable>
+  <developer id="io.github.gabrielbraz827">
+    <name>gabrielbraz827</name>
+  </developer>
+  <content_rating type="oars-1.1" />
+  <url type="homepage">https://github.com/gabrielbraz827/ekaza-cam</url>
+  <provides>
+    <binary>ekaza-cam</binary>
+  </provides>
+</component>

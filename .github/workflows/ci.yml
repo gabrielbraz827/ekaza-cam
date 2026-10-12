@@ -59,11 +59,17 @@ jobs:
       - uses: Swatinem/rust-cache@v2
       - name: Build release
         run: cargo build --release --target ${{ matrix.target }}
+      - name: Empacotar AppImage (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          chmod +x scripts/build-appimage.sh
+          ./scripts/build-appimage.sh target/${{ matrix.target }}/release/ekaza-cam target/${{ matrix.target }}/release/ekaza-cam-linux-x86_64.AppImage
       - name: Upload artefato
         uses: actions/upload-artifact@v4
         with:
           name: ekaza-cam-${{ matrix.target }}
           path: |
+            target/${{ matrix.target }}/release/ekaza-cam-linux-x86_64.AppImage
             target/${{ matrix.target }}/release/ekaza-cam
             target/${{ matrix.target }}/release/ekaza-cam.exe
           if-no-files-found: ignore
